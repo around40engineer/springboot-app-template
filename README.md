@@ -56,9 +56,9 @@
 <br />
 <!-- プロジェクト名を記載 -->
 
-## プロジェクト名
+## vite-and-springboot-web-app-template
 
-React、DRF、Terraform のテンプレートリポジトリ
+[Frontend]Vite(React)+[Backend]SpringBoot+[DB]Postgresql のテンプレートリポジトリ
 
 <!-- プロジェクトについて -->
 
