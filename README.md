@@ -149,7 +149,7 @@ DJANGO_SETTINGS_MODULE=project.settings.local
 
 .env ファイルを作成後、以下のコマンドで開発環境を構築
 
-make prepare
+```make prepare```
 
 ### 動作確認
 
@@ -160,7 +160,7 @@ http://127.0.0.1:8000 にアクセスできるか確認
 
 以下のコマンドでコンテナを停止することができます
 
-make down
+```make down```
 
 ### 環境変数の一覧
 
