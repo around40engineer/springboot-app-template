@@ -58,13 +58,13 @@
 
 ## vite-and-springboot-web-app-template
 
-[Frontend]Vite(React)+[Backend]SpringBoot+[DB]Postgresql のテンプレートリポジトリ
+Vite(React+Typescript) + SpringBoot(Kotlin) のテンプレートリポジトリ
 
 <!-- プロジェクトについて -->
 
 ## プロジェクトについて
 
-React、DRF、Terraform を勉強する際に使用できるテンプレート
+Demoとして簡単なTodoアプリを提供します。
 
 <!-- プロジェクトの概要を記載 -->
 
@@ -83,16 +83,14 @@ React、DRF、Terraform を勉強する際に使用できるテンプレート
 
 | 言語・フレームワーク  | バージョン |
 | --------------------- | ---------- |
-| Python                | 3.11.4     |
-| Django                | 4.2.1      |
-| Django Rest Framework | 3.14.0     |
-| MySQL                 | 8.0        |
 | Node.js               | 16.17.0    |
-| React                 | 18.2.0     |
-| Next.js               | 13.4.6     |
-| Terraform             | 1.3.6      |
+| Typescript            | 16.17.0    |
+| Vite                  | 18.2.0     |
+| Kotlin                | 3.14.0     |
+| Spring                | 4.2.1      |
+| Postgresql            | 8.0        |
 
-その他のパッケージのバージョンは pyproject.toml と package.json を参照してください
+その他のパッケージのバージョンは build.gradle.kts と package.json を参照してください
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
@@ -101,31 +99,11 @@ React、DRF、Terraform を勉強する際に使用できるテンプレート
 <!-- Treeコマンドを使ってディレクトリ構成を記載 -->
 <pre>
 .
-├── .devcontainer
-│   └── devcontainer.json
-├── .env
-├── .github
-│   ├── action
-│   ├── release-drafter.yml
-│   └── workflows
-├── .gitignore
-├── Makefile
-├── README.md
 ├── backend
-│   ├── .vscode
-│   ├── application
-│   ├── docs
-│   ├── manage.py
-│   ├── output
-│   ├── poetry.lock
-│   ├── project
-│   └── pyproject.toml
-├── containers
-│   ├── django
-│   ├── front
-│   ├── mysql
-│   └── nginx
-├── docker-compose.yml
+│   ├── gradle
+│   ├── src
+│   ├── gradle
+│   └── src
 ├── frontend
 │   ├── .gitignore
 │   ├── README.md
@@ -141,12 +119,11 @@ React、DRF、Terraform を勉強する際に使用できるテンプレート
 │   ├── styles
 │   ├── tailwind.config.js
 │   └── tsconfig.json
-└── infra
-    ├── .gitignore
-    ├── docker-compose.yml
-    ├── main.tf
-    ├── network.tf
-    └── variables.tf
+├── .env
+├── .gitignore
+├── Makefile
+├── README.md
+└── docker-compose.yml
 </pre>
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
@@ -229,10 +206,10 @@ make down
 | make apply          | Terraform の内容を適用                                                  | docker-compose -f infra/docker-compose.yml run --rm terraform apply                        |
 | make destroy        | Terraform で構成されたリソースを削除                                    | docker-compose -f infra/docker-compose.yml run --rm terraform destroy                      |
 
-### リモートデバッグの方法
+<!-- ### リモートデバッグの方法
 
 リモートデバッグ を使用する際は以下の url を参考に設定してください<br>
-[Django のコンテナへリモートデバッグしよう！](https://qiita.com/shun198/items/9e4fcb4479385217c323)
+[Django のコンテナへリモートデバッグしよう！](https://qiita.com/shun198/items/9e4fcb4479385217c323)-->
 
 ## トラブルシューティング
 
