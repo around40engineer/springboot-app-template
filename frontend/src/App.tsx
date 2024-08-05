@@ -8,8 +8,7 @@ export const App = () => {
 
     useEffect(()=>{
         getMemos().then((res)=>{
-            setMemos(res)
-        })
+            setMemos(res.memos)})
     }, [])
 
     return (
@@ -20,7 +19,7 @@ export const App = () => {
                 <button onClick={async ()=>{
                     if(inputRef.current){
                         await saveMemo(inputRef.current.value)
-                        setMemos(await getMemos())
+                        setMemos([...memos, inputRef.current.value])
                         inputRef.current.value = ''
                     }
                 }}>save</button>

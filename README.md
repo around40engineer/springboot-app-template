@@ -58,13 +58,15 @@
 
 ## vite-and-springboot-web-app-template
 
-Vite(React+Typescript) + SpringBoot(Kotlin) のテンプレートリポジトリ
+Webアプリ用のテンプレートリポジトリ
 
 <!-- プロジェクトについて -->
 
 ## プロジェクトについて
 
-Demoとして簡単なTodoアプリを提供します。
+デモとして簡単なTodoアプリを提供します。
+フロントエンドのフレームワークとしてVite(React+Typescript)を使用し、バックエンドのフレームワークとしてSpringBoot(Kotlin)を使用しています。
+
 
 <!-- プロジェクトの概要を記載　-->
 <!--     <p align="left"> -->
@@ -80,14 +82,14 @@ Demoとして簡単なTodoアプリを提供します。
 
 <!-- 言語、フレームワーク、ミドルウェア、インフラの一覧とバージョンを記載 -->
 
-| 言語・フレームワーク  | バージョン |
-| --------------------- | ---------- |
-| Node.js               | 16.17.0    |
-| Typescript            | 16.17.0    |
-| Vite                  | 18.2.0     |
-| Kotlin                | 3.14.0     |
-| Spring                | 4.2.1      |
-| Postgresql            | 8.0        |
+| 言語・フレームワーク  | バージョン  |
+|-------------|--------|
+| Node.js     | 22.4.1 |
+| Typescript  | 5.2.2  |
+| Vite        | 5.3.4  |
+| Java        | 21.0.4 |
+| Spring Boot | 3.3.2  |
+| Postgresql  | 15.3   |
 
 その他のパッケージのバージョンは build.gradle.kts と package.json を参照してください
 
@@ -99,10 +101,39 @@ Demoとして簡単なTodoアプリを提供します。
 <pre>
 .
 ├── backend
+│   ├── .gradle
+│   ├── build
 │   ├── gradle
 │   ├── src
-│   ├── gradle
-│   └── src
+│   │   ├── main
+│   │   │   └── kotlin
+│   │   │       └── com
+│   │   │           └── example
+│   │   │               └── backend
+│   │   │                   ├── BootApplication.kt
+│   │   │                   ├── MemoController.kt
+│   │   │                   ├── MemoRepository.kt
+│   │   │                   ├── MemoService.kt
+│   │   │                   ├── MemoEntity.kt
+│   │   │                   ├── ReqSaveMemo.kt
+│   │   │                   └── ResGetMemo.kt
+│   │   └── test
+│   │       └── kotlin
+│   │           └── com
+│   │               └── example
+│   │                   └── backend
+│   │                       ├── controller
+│   │                       ├── dto
+│   │                       ├── entity
+│   │                       ├── repository
+│   │                       └── service
+│   ├── .gitignore
+│   ├── build.gradle.kts
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── HELP.md
+│   └── settings.gradle.kts
+│
 ├── frontend
 │   ├── .gitignore
 │   ├── README.md
