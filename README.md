@@ -6,28 +6,28 @@
 <!-- 該当するプロジェクトの中から任意のものを選ぶ-->
 <p style="display: inline">
   <!-- フロントエンドの言語一覧 -->
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript">
   <!-- フロントエンドのフレームワーク一覧 -->
 <!--   <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"> -->
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="node">
 <!--   <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"> -->
-  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white">
-  <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="vite">
+  <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react">
 <!--   <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"> -->
   
   <!-- バックエンドの言語一覧 -->
-  <img src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white">
+  <img src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white" alt="kotlin">
   <!-- バックエンドのフレームワーク一覧 -->
-  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="spring">
   
   <!-- ミドルウェア一覧 -->
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="postgresql">
 <!--   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"> -->
 <!--   <img src="https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white"> -->
-  <img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white">
+  <img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" alt="gradle">
   
   <!-- インフラ一覧 -->
-  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
+  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="docker">
 <!--   <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"> -->
 <!--   <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"> -->
 <!--   <img src="https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"> -->
@@ -76,7 +76,7 @@ Webアプリ用のテンプレートリポジトリ
 <!--     <br /> -->
 <!--     <br />  -->
 
-<p align="right">(<a href="#top">トップへ</a>)</p>
+<p>(<a href="#top">トップへ</a>)</p>
 
 ## 環境
 
@@ -93,7 +93,7 @@ Webアプリ用のテンプレートリポジトリ
 
 その他のパッケージのバージョンは build.gradle.kts と package.json を参照してください
 
-<p align="right">(<a href="#top">トップへ</a>)</p>
+<p>(<a href="#top">トップへ</a>)</p>
 
 ## ディレクトリ構成
 
@@ -156,7 +156,7 @@ Webアプリ用のテンプレートリポジトリ
 └── docker-compose.yml
 </pre>
 
-<p align="right">(<a href="#top">トップへ</a>)</p>
+<p>(<a href="#top">トップへ</a>)</p>
 
 ## 開発環境構築
 
@@ -198,47 +198,30 @@ make down
 
 ### 環境変数の一覧
 
-| 変数名                 | 役割                                      | デフォルト値                       | DEV 環境での値                           |
-| ---------------------- | ----------------------------------------- | ---------------------------------- | ---------------------------------------- |
-| MYSQL_ROOT_PASSWORD    | MySQL のルートパスワード（Docker で使用） | root                               |                                          |
-| MYSQL_DATABASE         | MySQL のデータベース名（Docker で使用）   | django-db                          |                                          |
-| MYSQL_USER             | MySQL のユーザ名（Docker で使用）         | django                             |                                          |
-| MYSQL_PASSWORD         | MySQL のパスワード（Docker で使用）       | django                             |                                          |
-| MYSQL_HOST             | MySQL のホスト名（Docker で使用）         | db                                 |                                          |
-| MYSQL_PORT             | MySQL のポート番号（Docker で使用）       | 3306                               |                                          |
-| SECRET_KEY             | Django のシークレットキー                 | secretkey                          | 他者に推測されないランダムな値にすること |
-| ALLOWED_HOSTS          | リクエストを許可するホスト名              | localhost 127.0.0.1 [::1] back web | フロントのホスト名                       |
-| DEBUG                  | デバッグモードの切り替え                  | True                               | False                                    |
-| TRUSTED_ORIGINS        | CORS で許可するオリジン                   | http://localhost                   |                                          |
-| DJANGO_SETTINGS_MODULE | Django アプリケーションの設定モジュール   | project.settings.local             | project.settings.dev                     |
+| 変数名                    | 役割                          | デフォルト値                             | DEV 環境での値            |
+|------------------------|-----------------------------|------------------------------------|----------------------|
+| MYSQL_ROOT_PASSWORD    | MySQL のルートパスワード（Docker で使用） | root                               |                      |
+| MYSQL_DATABASE         | MySQL のデータベース名（Docker で使用）  | django-db                          |                      |
+| MYSQL_USER             | MySQL のユーザ名（Docker で使用）     | django                             |                      |
+| MYSQL_PASSWORD         | MySQL のパスワード（Docker で使用）    | django                             |                      |
+| MYSQL_HOST             | MySQL のホスト名（Docker で使用）     | db                                 |                      |
+| MYSQL_PORT             | MySQL のポート番号（Docker で使用）    | 3306                               |                      |
+| SECRET_KEY             | Django のシークレットキー            | secretkey                          | 他者に推測されないランダムな値にすること |
+| ALLOWED_HOSTS          | リクエストを許可するホスト名              | localhost 127.0.0.1 [::1] back web | フロントのホスト名            |
+| DEBUG                  | デバッグモードの切り替え                | True                               | False                |
+| TRUSTED_ORIGINS        | CORS で許可するオリジン              | http://localhost                   |                      |
+| DJANGO_SETTINGS_MODULE | Django アプリケーションの設定モジュール     | project.settings.local             | project.settings.dev |
 
 ### コマンド一覧
 
-| Make                | 実行する処理                                                            | 元のコマンド                                                                               |
-| ------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| make prepare        | node_modules のインストール、イメージのビルド、コンテナの起動を順に行う | docker-compose run --rm front npm install<br>docker-compose up -d --build                  |
-| make up             | コンテナの起動                                                          | docker-compose up -d                                                                       |
-| make build          | イメージのビルド                                                        | docker-compose build                                                                       |
-| make down           | コンテナの停止                                                          | docker-compose down                                                                        |
-| make loaddata       | テストデータの投入                                                      | docker-compose exec app poetry run python manage.py loaddata crm.json                      |
-| make makemigrations | マイグレーションファイルの作成                                          | docker-compose exec app poetry run python manage.py makemigrations                         |
-| make migrate        | マイグレーションを行う                                                  | docker-compose exec app poetry run python manage.py migrate                                |
-| make show_urls      | エンドポイントをターミナル上で一覧表示                                  | docker-compose exec app poetry run python manage.py show_urls                              |
-| make shell          | テストデータの投入                                                      | docker-compose exec app poetry run python manage.py debugsqlshell                          |
-| make superuser      | スーパーユーザの作成                                                    | docker-compose exec app poetry run python manage.py createsuperuser                        |
-| make test           | テストを実行                                                            | docker-compose exec app poetry run pytest                                                  |
-| make test-cov       | カバレッジを表示させた上でテストを実行                                  | docker-compose exec app poetry run pytest --cov                                            |
-| make format         | black と isort を使ってコードを整形                                     | docker-compose exec app poetry run black . <br> docker-compose exec app poetry run isort . |
-| make update         | Poetry 内のパッケージの更新                                             | docker-compose exec app poetry update                                                      |
-| make app            | アプリケーション のコンテナへ入る                                       | docker exec -it app bash                                                                   |
-| make db             | データベースのコンテナへ入る                                            | docker exec -it db bash                                                                    |
-| make pdoc           | pdoc ドキュメントの作成                                                 | docker-compose exec app env CI_MAKING_DOCS=1 poetry run pdoc -o docs application           |
-| make init           | Terraform の初期化                                                      | docker-compose -f infra/docker-compose.yml run --rm terraform init                         |
-| make fmt            | Terraform の設定ファイルをフォーマット                                  | docker-compose -f infra/docker-compose.yml run --rm terraform fmt                          |
-| make validate       | Terraform の構成ファイルが正常であることを確認                          | docker-compose -f infra/docker-compose.yml run --rm terraform validate                     |
-| make show           | 現在のリソースの状態を参照                                              | docker-compose -f infra/docker-compose.yml run --rm terraform show                         |
-| make apply          | Terraform の内容を適用                                                  | docker-compose -f infra/docker-compose.yml run --rm terraform apply                        |
-| make destroy        | Terraform で構成されたリソースを削除                                    | docker-compose -f infra/docker-compose.yml run --rm terraform destroy                      |
+| Make           | 実行する処理                            | 元のコマンド                                                                |
+|----------------|-----------------------------------|-----------------------------------------------------------------------|
+| make prepare   | node_modules のインストール、コンテナの起動      | cd frontend && npm install<br>docker-compose up -d --build            |
+| make f-test    | フロントエンドのテストを実行                    | docker-compose up -d                                                  |
+| make b-test    | バックエンドのテストを実行                     | docker-compose build                                                  |
+| make test      | フロントエンドとバックエンドのテストを実行             | docker-compose down                                                   |
+| make f-preview | フロントエンドを起動（localhost:5173）        | docker-compose exec app poetry run python manage.py loaddata crm.json |
+| make preview   | フロントエンドとバックエンドを起動(localhost:8080) | docker-compose -f infra/docker-compose.yml run --rm terraform destroy |
 
 <!-- ### リモートデバッグの方法
 
@@ -269,4 +252,4 @@ make build
 
 を実行して Docker image を更新してください
 
-<p align="right">(<a href="#top">トップへ</a>)</p>
+<p>(<a href="#top">トップへ</a>)</p>

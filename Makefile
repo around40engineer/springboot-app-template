@@ -17,6 +17,12 @@ backend-test:
 	cd backend && ./gradlew ktlintFormat && ./gradlew ktlintCheck || say "[[pbas 300]]$(FAIL_WORD)"
 	cd backend && ./gradlew test && say "[[pbas 100]]$(SUCCESS_WORD)" || afplay audio/doushite.mp3
 
-all:
+test:
 	make backend-test
 	make frontend-test && say "[[pbas 100]]$(SUCCESS_WORD)" || say "[[pbas 300]]$(FAIL_WORD)"
+
+preview:
+	cd frontend && npm install
+	cd frontend && npm run build
+	cp -r frontend/dist/* backend/src/main/resources/static
+	cd backend && ./gradlew bootRun
