@@ -64,8 +64,10 @@ Webアプリ用のテンプレートリポジトリ
 
 ## プロジェクトについて
 
-デモとして簡単なTodoアプリを提供します。
-フロントエンドのフレームワークとしてVite(React+Typescript)を使用し、バックエンドのフレームワークとしてSpringBoot(Kotlin)を使用しています。
+デモとして簡単なTodoアプリを提供します。</br>
+フロントエンドのフレームワークとしてVite(React+Typescript)を使用し、バックエンドのフレームワークとしてSpringBoot(Kotlin)を使用しています。</br>
+Postgresqlをデータベースとして使用しています。ローカル開発環境としてDockerを使用してデータベースを立ち上げています。</br>
+このテンプレートを使うことで一般的なWebアプリの開発に必要な環境をすぐに構築することができます。</br>
 
 
 <!-- プロジェクトの概要を記載　-->
@@ -166,26 +168,60 @@ Webアプリ用のテンプレートリポジトリ
 
 .env ファイルを以下の環境変数例と[環境変数の一覧](#環境変数の一覧)を元に作成
 
-.env
-MYSQL_ROOT_PASSWORD=root
-MYSQL_DATABASE=django-db
-MYSQL_USER=django
-MYSQL_PASSWORD=django
-MYSQL_HOST=db
-MYSQL_PORT=3306
-SECRET_KEY=django
-DJANGO_SETTINGS_MODULE=project.settings.local
+.envは現在使ってません。
+必要に応じて作成してください。
+
+[//]: # (MYSQL_ROOT_PASSWORD=root)
+
+[//]: # (MYSQL_DATABASE=django-db)
+
+[//]: # (MYSQL_USER=django)
+
+[//]: # (MYSQL_PASSWORD=django)
+
+[//]: # (MYSQL_HOST=db)
+
+[//]: # (MYSQL_PORT=3306)
+
+[//]: # (SECRET_KEY=django)
+
+[//]: # (DJANGO_SETTINGS_MODULE=project.settings.local)
+
+[//]: # (ALLOWED_HOSTS=localhost)
+
+[//]: # (MYSQL_ROOT_PASSWORD=root)
+
+[//]: # (MYSQL_DATABASE=django-db)
+
+[//]: # (MYSQL_USER=django)
+
+[//]: # (MYSQL_PASSWORD=django)
+
+[//]: # (MYSQL_HOST=db)
+
+[//]: # (MYSQL_PORT=3306)
+
+[//]: # (SECRET_KEY=django)
+
+[//]: # (DJANGO_SETTINGS_MODULE=project.settings.local)
 
 
-.env ファイルを作成後、以下のコマンドで開発環境を構築
+(必要に応じて.env ファイルを作成後)</br>
+以下のコマンドで開発環境を構築
 
 ```
 make prepare
 ```
 
+開発環境が構築できたら以下のコマンドでアプリを起動
+
+```
+make preview
+```
+
 ### 動作確認
 
-http://127.0.0.1:8000 にアクセスできるか確認
+http://localhost:8080 にアクセスできるか確認
 アクセスできたら成功
 
 ### コンテナの停止
@@ -222,6 +258,8 @@ make down
 | make test      | フロントエンドとバックエンドのテストを実行             | docker-compose down                                                   |
 | make f-preview | フロントエンドを起動（localhost:5173）        | docker-compose exec app poetry run python manage.py loaddata crm.json |
 | make preview   | フロントエンドとバックエンドを起動(localhost:8080) | docker-compose -f infra/docker-compose.yml run --rm terraform destroy |
+| make down      | 立ち上げたコンテナを停止する                    | docker-compose down                                                   |
+
 
 <!-- ### リモートデバッグの方法
 

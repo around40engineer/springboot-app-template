@@ -5,24 +5,28 @@ FAIL_WORDS := テスト失敗 チュピチュピチャパチャパドゥビド�
 
 FAIL_WORD := $(shell echo $(FAIL_WORDS) | tr ' ' '\n' | awk 'BEGIN{srand();}{a[NR]=$$0}END{print a[int(rand()*NR+1)]}')
 
-frontend-preview:
+prepare:
+	docker-compose up -d
+	cd frontend && npm install
+
+f-preview:
 	cd frontend && npm run build && afplay audio/kidou.mp3
 	cd frontend && npm run preview
 
-frontend-test:
+f-test:
 	cd frontend && npm run lint || say -r 1 -v Cellos らららら
 	cd frontend && npm run test && afplay audio/happy.mp3 || afplay audio/tigau.mp3
 
-backend-test:
+b-test:
 	cd backend && ./gradlew ktlintFormat && ./gradlew ktlintCheck || say "[[pbas 300]]$(FAIL_WORD)"
 	cd backend && ./gradlew test && say "[[pbas 100]]$(SUCCESS_WORD)" || afplay audio/doushite.mp3
 
 test:
-	make backend-test
-	make frontend-test && say "[[pbas 100]]$(SUCCESS_WORD)" || say "[[pbas 300]]$(FAIL_WORD)"
+	make b-test
+	make f-test && say "[[pbas 100]]$(SUCCESS_WORD)" || say "[[pbas 300]]$(FAIL_WORD)"
 
 preview:
-	cd frontend && npm install
 	cd frontend && npm run build
 	cp -r frontend/dist/* backend/src/main/resources/static
 	cd backend && ./gradlew bootRun
+
