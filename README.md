@@ -250,15 +250,15 @@ make down
 
 ### コマンド一覧
 
-| Make           | 実行する処理                            | 元のコマンド                                                                |
-|----------------|-----------------------------------|-----------------------------------------------------------------------|
-| make prepare   | node_modules のインストール、コンテナの起動      | cd frontend && npm install<br>docker-compose up -d --build            |
-| make f-test    | フロントエンドのテストを実行                    | docker-compose up -d                                                  |
-| make b-test    | バックエンドのテストを実行                     | docker-compose build                                                  |
-| make test      | フロントエンドとバックエンドのテストを実行             | docker-compose down                                                   |
-| make f-preview | フロントエンドを起動（localhost:5173）        | docker-compose exec app poetry run python manage.py loaddata crm.json |
-| make preview   | フロントエンドとバックエンドを起動(localhost:8080) | docker-compose -f infra/docker-compose.yml run --rm terraform destroy |
-| make down      | 立ち上げたコンテナを停止する                    | docker-compose down                                                   |
+| Make           | 実行する処理                            | 元のコマンド                                              |
+|----------------|-----------------------------------|-----------------------------------------------------|
+| make prepare   | node_modules のインストール、コンテナの起動      | cd frontend && npm install</br>docker-compose up -d |
+| make f-test    | フロントエンドのテストを実行                    | cd frontend && npm run test                         |
+| make b-test    | バックエンドのテストを実行                     | cd backend &&  ./gradle test                        |
+| make test      | フロントエンドとバックエンドのテストを実行             | make f-test && make b-test                          |
+| make f-preview | フロントエンドを起動（localhost:5173）        | cd frontend && npm run test                         |
+| make preview   | フロントエンドとバックエンドを起動(localhost:8080) | cd frontend && npm run build</br>cd frontend &&     |
+| make down      | 立ち上げたコンテナを停止する                    | docker-compose down                                 |
 
 
 <!-- ### リモートデバッグの方法
